@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Prashidha Bhattarai">
+    <title>Text to Speech</title>
+    <link rel="stylesheet" href="resources/TextToSpeech.css">
+</head>
+<body>
+    <div class="outerContainer">
+        <div class="innerContainer">
+            <div class="header"><big>Text to Speech</big></div>
+            <textarea id="textArea" placeholder="Start typing here..."></textarea>
+            <div class="message hide">
+                <!-- ! error, voice is currently playing, want to cancel it ? -->
+                ! Error: Please wait until the current speech finishes.
+                Cancel ongoing speech ?
+                <button class="cancel">Cancel</button>
+            </div>
+            <div class="count">
+                <select></select>
+                <button class="listen">Listen</button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="foot">
+        Design by &copyP.B.
+    </footer>
+
+    <script src="resources/TextToSpeech.js"></script>
+</body>
+</html>

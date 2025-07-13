@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Color the Boxes</title>
+    <style>
+      body{
+        background-color: rgb(159, 162, 189);
+      }
+      .container {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        gap: 5vw;
+        align-items: center;
+      }
+      .box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 60px;
+        width: 10%;
+        border: 1px solid rgb(0, 0, 0);
+      }
+
+      .stop, .start{
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        font-weight: bolder;
+        letter-spacing: 2px;
+        width: 100px;
+        height: 30px;
+        position: absolute;
+        bottom: 30px;
+        right: 50px;
+      }
+      
+      .hidden{
+        display: none;
+      }
+
+      @media (orientation: portrait) {
+        .container{
+            flex-direction: column;
+        }
+        .box{
+            height: 10%;
+            width: 50%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- give random color and background-color to 5 boxes -->
+    <div class="container">
+      <div class="box">BOX 1</div>
+      <div class="box">BOX 2</div>
+      <div class="box">BOX 3</div>
+      <div class="box">BOX 4</div>
+      <div class="box">BOX 5</div>
+    </div>
+    <button class="stop">Stop</button>
+    <button class="start hidden">Start</button>
+    <script src="04_ColorTheBoxes.js"></script>
+  </body>
+</html>

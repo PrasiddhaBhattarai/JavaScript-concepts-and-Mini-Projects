@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React</title>
+</head>
+
+<body>
+    <button>Button Clicked</button>
+</body>
+<script>
+    class React {
+        constructor() {
+            this.library = "React"
+            this.server = "https://localhost:300"
+
+            //requirement
+            document
+                .querySelector('button')
+                .addEventListener('click', this.handleClick.bind(this))
+
+        }
+        handleClick() {
+            console.log("button clicked");
+            console.log(this.server);
+            this.innerHTML = "hello";
+        }
+    }
+
+    const app = new React()
+
+    const button = document.querySelector('button');
+    const user = {
+        name: 'Bob',
+        sayHello: function () {
+            console.log(`Hello, ${this.name}`);
+        }
+    };
+
+    // If you directly assign the event listener, `this` will refer to the button, not the user object.
+    button.addEventListener('click', user.sayHello);  // `this` will refer to the button, not user
+
+    // Using .bind() to fix `this`
+    button.addEventListener('click', user.sayHello.bind(user));  // `this` will correctly refer to the user object
+
+</script>
+
+</html>
+
+<!-- what if, .call was used instead of .bind? -->
+<!-- .call immediate calls the function, without button click -->

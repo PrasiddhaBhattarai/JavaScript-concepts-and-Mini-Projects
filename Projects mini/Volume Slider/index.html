@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Custom Volume Slider</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f4f4f4;
+    }
+
+    .slider-container {
+      width: 300px;
+      height: 20px;
+      position: relative;
+      background-color: #ddd;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    .slider-track {
+      position: absolute;
+      top: 0%;
+      left: 0;
+      height: 100%;
+      background-color: #3498db;
+      border-radius: 10px;
+      /* transition: width 0.1s ease-in-out; */
+    }
+
+    .slider-thumb {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 20px;
+      height: 20px;
+      background-color: #fff;
+      border-radius: 50%;
+      border: 2px solid #3498db;
+      cursor: pointer;
+      transform: translateY(-50%);
+      /* transition: background-color 0.3s; */
+    }
+
+    #volumeLabel {
+      margin-top: 10px;
+      font-size: 16px;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="slider-container" id="sliderContainer">
+    <div class="slider-track" id="sliderTrack"></div>
+    <div class="slider-thumb" id="sliderThumb"></div>
+  </div>
+  <div id="volumeLabel">Volume: 0%</div>
+
+  <script>
+    const sliderContainer = document.getElementById('sliderContainer');
+    const sliderTrack = document.getElementById('sliderTrack');
+    const sliderThumb = document.getElementById('sliderThumb');
+    const volumeLabel = document.getElementById('volumeLabel');
+
+    let isDragging = false;
+
+    // Function to update the slider and label
+    function updateSlider(position) {
+      // Constrain the position within the bounds of the container
+      const maxWidth = sliderContainer.offsetWidth;
+      const offsetX = Math.min(Math.max(position, 0), maxWidth);
+
+      // Update the thumb position
+      sliderThumb.style.left = `${offsetX - sliderThumb.offsetWidth / 2}px`;
+
+      // Update the track width
+      sliderTrack.style.width = `${offsetX}px`;
+
+      // Calculate volume percentage
+      const volume = Math.round((offsetX / maxWidth) * 100);
+      volumeLabel.textContent = `Volume: ${volume}%`;
+    }
+
+    // Handle mouse down event to start dragging
+    sliderThumb.addEventListener('mousedown', function (event) {
+      isDragging = true;
+      document.body.style.userSelect = 'none'; // Prevent text selection
+
+      // Start the slider update immediately
+      let position = event.currentTarget.getBoundingClientRect().width;
+      // updateSlider(event.clientX - sliderContainer.offsetLeft);
+      // updateSlider(position);
+    });
+
+    // Handle mouse move event when dragging
+    document.addEventListener('mousemove', function (event) {
+      if (isDragging) {
+        let width = (event.target.getBoundingClientRect().width/ event.offsetX ) *100; 
+        console.log(width);
+        updateSlider(width);
+      }
+    });
+
+    // Handle mouse up event to stop dragging
+    document.addEventListener('mouseup', function () {
+      isDragging = false;
+      document.body.style.userSelect = ''; // Allow text selection again
+    });
+
+    // Handle click on the slider container to jump to position
+    sliderContainer.addEventListener('click', function (event) {
+      console.log(event.clientX - sliderContainer.offsetLeft);
+      console.log((event.offsetX ));
+      updateSlider(event.clientX - sliderContainer.offsetLeft);
+    });
+  </script>
+
+</body>
+
+</html>

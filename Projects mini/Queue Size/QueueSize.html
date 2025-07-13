@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Prashidha Bhattarai">
+    <title>Queue Size</title>
+    <style>
+        body {
+            background-image: url(resources/melanie-klepper-SsBI9pweAeA-unsplash.jpg);
+            background-position: center;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 97vh;
+            /* flex-direction: column; */
+            text-align: center;
+        }
+
+        .container {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 50px;
+            padding-bottom: 25px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            width: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container h1 {
+            color: rgb(213, 158, 91);
+            padding-bottom: 0;
+            margin: 0;
+            font-size: 6ch;
+        }
+
+        .counter {
+            padding: 10px;
+            padding-bottom: 15px;
+            color: rgb(197, 193, 173);
+            text-shadow: 1px 1px 2px black;
+            font-size: 6ch;
+            font-weight: bolder;
+        }
+
+        .container2 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            padding-bottom: 5px;
+        }
+
+        button {
+            color: white;
+            border: none;
+            padding: 15px 25px;
+            font-size: 2.3ch;
+            margin: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            color: rgb(245, 242, 221);
+            text-shadow: 1px 1px 2px black;
+            transition: opacity 0.3s;
+        }
+
+        button:hover {
+            opacity: 0.8;
+        }
+
+        #inc{
+            background-color: #4CAF50;
+        }
+
+        #dec{
+            background-color: #de3939;
+        }
+
+        .reset {
+            background-color: #3c47a6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+        }
+
+        svg{
+            size: 2ch;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Queue Size</h1>
+        <div class="counter" id="counter">0</div>
+        <div class="container2">
+            <button id="inc">Increment</button>
+            <button id="dec">Decrement</button>
+        </div>
+        <button id="reset" class="reset">
+            Reset
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="20" height="20" viewBox="0 0 256 256" xml:space="preserve">
+
+                <defs>
+                </defs>
+                <g style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: none; fill-rule: nonzero; opacity: 1;" transform="translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)" >
+                    <path d="M 75.702 53.014 c -2.142 7.995 -7.27 14.678 -14.439 18.816 c -7.168 4.138 -15.519 5.239 -23.514 3.095 c -16.505 -4.423 -26.335 -21.448 -21.913 -37.953 C 20.258 20.467 37.286 10.64 53.79 15.06 c 4.213 1.129 8.076 3.118 11.413 5.809 l -8.349 8.35 h 26.654 V 2.565 l -8.354 8.354 c -5.1 -4.405 -11.133 -7.61 -17.74 -9.381 C 33.451 -4.882 8.735 9.389 2.314 33.35 c -6.42 23.961 7.851 48.678 31.811 55.098 C 38.001 89.486 41.934 90 45.842 90 c 7.795 0 15.488 -2.044 22.42 -6.046 c 10.407 -6.008 17.851 -15.709 20.962 -27.317 L 75.702 53.014 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(231, 30, 30); fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
+                </g>
+                </svg>
+        </button>
+    </div>
+
+    <script src="resources/QueueSize.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,157 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100vh;
+}
+
+.outerContainer {
+    background-image: url("mic-pic.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 97vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+}
+
+.innerContainer {
+    color: white;
+    background-color: rgba(0, 0, 0, 0.85);
+    padding: 50px;
+    padding-bottom: 25px;
+    border-radius: 10px;
+    box-shadow: 12px 9px 30px red,
+        -12px -9px 25px blue;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 75vh;
+    min-width: 70vw;
+}
+
+.header {
+    font-size: 7.5ch;
+    color: rgb(0, 102, 255);
+    text-shadow: 1px 1px 3px rgba(255, 0, 0, 0.596);
+}
+
+textarea {
+    width: 95%;
+    height: 50%;
+    background-color: rgba(0, 0, 0, 0.7);
+    ;
+    color: #fff;
+    border: 1px solid #444;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 3ch;
+    resize: none;
+    transition: 0.3s;
+}
+
+textarea:focus {
+    box-shadow: 4px 4px 6px red,
+        -4px -4px 6px blue;
+}
+
+.message{
+    font-size: 1rem;
+    color: red;
+}
+
+.cancel{
+    padding: 0.5rem;
+    border-radius: 1rem;
+    background: red;
+    color: white;
+}
+
+.count {
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+select{
+    flex: 1;
+    height: 50px;
+    padding: 0 1rem;
+    border-radius: 2rem;
+    color: white;
+    outline: none;
+    border: none;
+    appearance: none;
+    background: rgba(41, 179, 189, 0.5) url("dropdown.svg") no-repeat;
+    background-size: 25px;
+    background-position-x: calc(100% - 1rem);
+    background-position-y: 0.7rem;
+}
+
+select option{
+    background: rgb(58, 57, 57);
+    opacity: 0.3;
+}
+
+.listen{
+    padding: 1rem;
+    border-radius: 2rem;
+    color: white;
+    font-size: large;
+    font-weight: 400;
+    background-color: rgb(41, 179, 189);
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.596);
+}
+
+button{
+    cursor: pointer;
+    border: none;
+    transition: all 0.1s;
+}
+
+button:hover{
+    scale: 1.1;
+}
+
+.foot {
+    height: 3vh;
+    background-color: rgba(0, 0, 0, 0.845);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hide{
+    display: none;
+}
+
+
+@media (orientation: portrait) {
+    .outerContainer{
+        background-image: url("mic-pic-vertical.jpg");
+    }
+
+    .innerContainer {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        height: 90vh;
+        width: 85vw;
+        box-sizing: border-box;
+    }
+
+    .count {
+        width: 100%;
+        gap: 19px;
+    }
+
+    select{
+        background-image: none;
+    }
+}

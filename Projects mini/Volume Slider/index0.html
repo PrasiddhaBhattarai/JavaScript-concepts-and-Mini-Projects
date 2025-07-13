@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Volume Slider</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+
+    .slider-container {
+      width: 300px;
+      margin: 20px auto;
+      text-align: center;
+    }
+
+    #volumeSlider {
+      width: 100%;
+      height: 8px;
+      border-radius: 5px;
+      background: #d41a1a;
+      cursor: pointer;
+      appearance: none;
+    }
+
+    #volumeSlider::-webkit-slider-thumb {
+      appearance: none;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: #39db34;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    /* for mozila firefox, as webkit-slider-thumb won't work here */
+    #volumeSlider::-moz-range-thumb {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: #db3434;
+      cursor: pointer;
+    }
+
+    #volumeLabel {
+      margin-top: 10px;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="slider-container">
+    <input type="range" id="volumeSlider" min="0" max="100" value="50">
+    <div id="volumeLabel">Volume: 50%</div>
+  </div>
+
+  <script>
+    const volumeSlider = document.getElementById('volumeSlider');
+    const volumeLabel = document.getElementById('volumeLabel');
+
+    // Update volume label based on slider value
+    volumeSlider.addEventListener('input', function() {
+      const volumeValue = volumeSlider.value;
+      volumeLabel.textContent = `Volume: ${volumeValue}%`;
+    });
+
+    // Optional: Update volume label when clicked anywhere on the slider
+    volumeSlider.addEventListener('click', function() {
+      const volumeValue = volumeSlider.value;
+      volumeLabel.textContent = `Volume: ${volumeValue}%`;
+    });
+  </script>
+
+</body>
+</html>

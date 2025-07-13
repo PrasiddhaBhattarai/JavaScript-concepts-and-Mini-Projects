@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+    <style>
+        body{
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body> 
+    <!-- <script src="02_BusinessNameGenerator.js"></script> -->
+    <!-- <script src="01_FaultyCalculator.js.js"></script> -->
+    <button id="red">RED</button>
+    <button id="blue">BLUE</button>
+    <!-- <script src="09_2_Fetch.js"></script> -->
+    <script src="11_1_Prototype.js"></script>
+     <script>
+        function colorChange(color1){
+            
+            // document.body.style.backgroundColor = `${color1}`;
+
+            return () => document.body.style.backgroundColor = `${color1}`;
+        }
+
+        document.getElementById("red").onclick = colorChange("red");
+        document.getElementById("blue").onclick = colorChange("blue");
+        
+
+     </script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dark Themed Stopwatch</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Arial", sans-serif;
+      }
+
+      body {
+        background-color: #121212;
+        color: #f1f1f1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        font-size: 18px;
+        margin: 0;
+      }
+
+      .stopwatch-container {
+        background-color: #1e1e1e;
+        padding: 40px;
+        border-radius: 10px;
+        text-align: center;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+      }
+
+      .time-display {
+        font-size: 48px;
+        font-weight: bold;
+        margin-bottom: 30px;
+        letter-spacing: 2px;
+      }
+
+      .button-container {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+      }
+
+      button {
+        background-color: #333;
+        color: #fff;
+        padding: 15px 30px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        font-size: 16px;
+        font-weight: bold;
+      }
+
+      button:hover {
+        background-color: #444;
+      }
+
+      button:active {
+        background-color: #555;
+      }
+
+      .button-container button:disabled {
+        background-color: #777;
+        cursor: not-allowed;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="stopwatch-container">
+      <div class="time-display" id="timeDisplay">00:00:00</div>
+      <div class="button-container">
+        <button id="startBtn">Start</button>
+        <button id="pauseBtn" disabled>Pause</button>
+        <button id="resetBtn">Reset</button>
+      </div>
+    </div>
+
+    <script src="resources/StopWatch.js"></script>
+  </body>
+</html>

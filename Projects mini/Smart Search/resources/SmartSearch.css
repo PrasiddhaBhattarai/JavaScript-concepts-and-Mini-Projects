@@ -1,0 +1,120 @@
+*{
+    margin: 0;
+    border: 0;
+    outline: 0;
+}
+
+body{
+    background: #9f9f9f;
+}
+
+.search-box {
+    --padding: 14px;
+
+    cursor: text;
+    margin-inline: auto;
+    margin-top: 15vh;
+    width: 60vw;
+    display: flex;
+    align-items: center;
+    padding: var(--padding);
+    /* for curves on left and right */
+    /* border-radius = double of padding */
+    border-radius: calc(2*var(--padding));
+    background: #f1f1f1;
+    transition: 0.25s;
+    position: relative;
+}
+
+.search-box:focus-within {
+    background: #f7f7f7;
+    /* box-shadow: 0 0 2px rgba(0, 0, 0, 0.75); */
+    box-shadow: 1px 1px 2px rgb(47, 42, 42);
+
+}
+
+.search-input {
+    color: #3e3e3e;
+    margin-left: var(--padding);
+    outline: none;
+    border: none;
+    font-size: 1.3rem;
+    background: transparent;
+    flex: 1;
+}
+
+.search-input::placeholder,
+.search-icon
+{
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.cross-icon {
+    color: rgb(0, 0, 0);
+    /* position: absolute;
+    right: .75rem; */
+    border: none;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0);
+    user-select: none;
+}
+
+.search-icon{
+    padding-top: 3px;
+    background: transparent;
+    cursor: pointer;
+    user-select: none;
+}
+
+.search-icon:hover{
+    scale: 1.1;
+}
+
+/* input[type="search"]::-webkit-search-cancel-button */
+.search-input::-webkit-search-cancel-button {
+    /* Remove default style */
+    -webkit-appearance: none;
+}
+
+.hide {
+    display: none;
+}
+
+.user-cards{
+    width: 70vw;
+    margin-inline: auto;
+    margin-top: 10vh;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1rem;
+}
+
+.card{
+    border: 1px solid rgb(255, 255, 255);
+    background-color: white;
+    padding: 2rem;
+    border-radius: 1rem;
+}
+
+.card> .header{
+    margin-bottom: .7rem;
+    font-size: 1.5rem;
+    font-weight: 300;
+}
+
+.card> .body{
+    font-size: 1rem;
+    color: #5c5c5c;
+}
+
+@media (orientation: portrait) {
+    .search-box{
+        width: 75vw;
+    }
+    .search-input{
+        width: 55vw;
+    }
+    .user-cards{
+        width: 80vw;
+    }
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Search</title>
+    <link rel="stylesheet" href="resources/SmartSearch.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+
+<body>
+    <div class="search-box">
+        <button class="search-icon">
+            <span class="material-symbols-outlined">search</span>
+        </button>
+        <input class="search-input" type="search" spellcheck="false" placeholder="Search user details ..." data-search>
+        <button class="cross-icon hide">
+            <span class="material-symbols-outlined">close</span>
+        </button>
+    </div>
+    <div class="user-cards" data-user-cards-container>
+        <template data-user-template>
+            <div class="card">
+                <div class="header" data-header></div>
+                <div class="body" data-body></div>
+            </div>
+        </template>
+    </div>
+
+    <script src="resources/SmartSearch.js"></script>
+</body>
+
+</html>

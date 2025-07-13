@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SVG Toggle</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            outline: 0;
+        }
+
+        .hide{
+            display: none;
+        }
+
+        body {
+            background-color: rgb(201, 201, 201);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .display-svg {
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s ease-in;
+        }
+
+        .display-svg:hover {
+            scale: 1.1;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="hide">
+        <defs>
+            <symbol id="home-filled" viewBox="0 0 24 24">
+                <path
+                    d="M13.5 1.515a3 3 0 0 0-3 0L3 5.845a2 2 0 0 0-1 1.732V21a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-6h4v6a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V7.577a2 2 0 0 0-1-1.732l-7.5-4.33z">
+                </path>
+            </symbol>
+
+            <symbol id="home-hollow" viewBox="0 0 24 24">
+                <path
+                    d="M12.5 3.247a1 1 0 0 0-1 0L4 7.577V20h4.5v-6a1 1 0 0 1 1-1h5a1 1 0 0 1 1 1v6H20V7.577l-7.5-4.33zm-2-1.732a3 3 0 0 1 3 0l7.5 4.33a2 2 0 0 1 1 1.732V21a1 1 0 0 1-1 1h-6.5a1 1 0 0 1-1-1v-6h-3v6a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V7.577a2 2 0 0 1 1-1.732l7.5-4.33z">
+                </path>
+            </symbol>
+        </defs>
+    </svg>
+
+
+    <!-- To show icon -->
+    <button class="display-svg">
+        <svg height="190" fill="white">
+            <use class="use-svg"  href="#home-hollow"></use>
+        </svg>
+    </button>
+    <script src="svgToggle.js"></script>
+</body>
+
+</html>
+
+<!-- home-filled
+    <svg xmlns="http://www.w3.org/2000/svg" data-encore-id="icon" role="img" fill="white" height="24" aria-hidden="true"
+        viewBox="0 0 24 24">
+        <path
+            d="M13.5 1.515a3 3 0 0 0-3 0L3 5.845a2 2 0 0 0-1 1.732V21a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-6h4v6a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V7.577a2 2 0 0 0-1-1.732l-7.5-4.33z">
+        </path>
+    </svg>
+
+    home-hollow
+    <svg data-encore-id="icon" role="img" aria-hidden="true" viewBox="0 0 24 24">
+        <path
+            d="M12.5 3.247a1 1 0 0 0-1 0L4 7.577V20h4.5v-6a1 1 0 0 1 1-1h5a1 1 0 0 1 1 1v6H20V7.577l-7.5-4.33zm-2-1.732a3 3 0 0 1 3 0l7.5 4.33a2 2 0 0 1 1 1.732V21a1 1 0 0 1-1 1h-6.5a1 1 0 0 1-1-1v-6h-3v6a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V7.577a2 2 0 0 1 1-1.732l7.5-4.33z">
+        </path>
+    </svg> -->
+
+
+
+<!-- The <defs> SVG element is used to store graphical objects that will be used at a later time. Objects created inside a <defs> element are not rendered directly. To display them you have to reference them (with a <use> element for example).
+
+Graphical objects can be referenced from anywhere, however, defining these objects inside of a <defs> element promotes understandability of the SVG content and is beneficial to the overall accessibility of the document. -->
+
+
+<!-- The <symbol> SVG element is used to define graphical template objects which can be instantiated by a <use> element.
+
+The use of <symbol> elements for graphics that are used multiple times in the same document adds structure and semantics. Documents that are rich in structure may be rendered graphically, as speech, or as Braille, and thus promote accessibility. -->
