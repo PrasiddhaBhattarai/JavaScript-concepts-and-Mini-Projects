@@ -10,6 +10,11 @@ This repository contains basic JavaScript concepts and a collection of small, be
 - Basic animations and interactions
 - Practical coding exercises
 
+## Check out Mini-Projects here
+```
+https://jsminiprojects.onrender.com/
+```
+
 ## 🧪 Mini Projects Included
 
 Each folder contains a standalone mini project demonstrating a particular feature or concept in JavaScript:
